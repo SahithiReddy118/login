@@ -24,7 +24,7 @@ session_start();
                 $_SESSION['username']=$email_pass['username'];
                 $pass_decode=password_verify($password,$db_pass);
 
-                if($pass_decode){
+               if($pass_decode){
                     echo "login successful";
                     ?>
                     <script>
@@ -32,10 +32,14 @@ session_start();
                         </script>
                     <?php
                 }else{
-                    echo "password incorrect";
+                    ?>
+                    <script>
+                    alert("password incorrect");</script>
+                    <?php
                 }
-                }else{
-                    echo "invalid email";
+                }else{?>
+                <script>
+                    alert("invalid email");</script><?php
                 }
             }
         
